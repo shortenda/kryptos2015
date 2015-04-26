@@ -1,0 +1,49 @@
+\documentclass{article}%
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+
+\usepackage[T1]{fontenc}
+\usepackage[procnames]{listings}
+\usepackage{xcolor}
+
+\begin{document}
+
+\begin{flushright}
+Western Washington University \\
+\end{flushright}
+
+\begin{center}
+Problem 3
+\end{center}
+
+The solution is: \\
+\begin{center}
+meet exactly eight tuesday one nine eight darrington avenue yellow lilly and take extra read
+\end{center}
+
+For sources we utilized the PDF provided that describes the encryption method used.
+
+In order to solve the puzzle we resorted to a brute force solution. We initially were working on the problem by hand but we then wrote a program to try a dictionary attack on the key for keys that matched the known plaintext, meet. We then had the program print out the result of decryipting the full message with the guessed key. We then looked over the results it gave us and looked for a key that worked. I've provided the python source below. It can be ran on a standard linux system as: \\
+
+echo MEET | cat - /usr/share/dict/words | python ragbaby.py
+
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+
+\lstset{language=Python,
+        basicstyle=\ttfamily\small,
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        procnamekeys={def,class}}
+
+\lstinputlisting{/home/shorted2/brute.py}
+
+\end{document}
